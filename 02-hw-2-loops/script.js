@@ -12,7 +12,7 @@ while (startNum > lastNum) {
     lastNum = +prompt(`Enter larger last number than start number, please`);
 }
 
-let evenSum = confirm(`Do you want to skip even numbers ?`);
+const evenSum = confirm(`Do you want to skip even numbers ?`);
 document.writeln(evenSum ? `Skip even numbers <br>` : `Don't skip even numbers <br>`);
 
 let result = 0;
