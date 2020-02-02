@@ -7,10 +7,10 @@ console.log(`asus price: ` + asus);
 
 const ware = [hp, apple, asus];
 
-const maxPrice = Math.max(hp, apple, asus);
+const maxPrice = Math.max(...ware);
 console.log(`Max Price: ${maxPrice}`);
 
-const minPrice = Math.min(hp, apple, asus);
+const minPrice = Math.min(...ware);
 console.log(`Min price: ${minPrice}`);
 
 const wareSum = (hp + apple + asus);
@@ -23,7 +23,7 @@ let wareSumtoHundret = wareSum / 100;
 wareSumtoHundret = Math.ceil(wareSumtoHundret) * 100;
 console.log(`Sum of wares (*100): ${wareSumtoHundret}`);
 
-const multiplicity = !!(Math.floor(wareSum) % 2) === 0;
+const multiplicity = Math.floor(wareSum) % 2 === 0;
 console.log(`Multiplicity of ware sum is: ${multiplicity}`);
 
 const sumCustomerMoney = 500 - wareSum;
