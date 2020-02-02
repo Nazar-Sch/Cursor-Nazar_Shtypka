@@ -1,17 +1,38 @@
-let numberFrom = parseInt(prompt(`Enter number "from": `), 10);
-if (isNaN(numberFrom)) {
-    parseInt(prompt(`Enter number "from": `), 10);
-} else {
-    console.log(numberFrom);
+let startNum = +prompt('Enter Your start number, please :)', 10);
+while (isNaN(startNum)) {
+    startNum = +prompt('Error :( You entered a string. Enter a start number, please :)');
 }
 
+let lastNum = +prompt(`Enter Your last number, please :)`, 100);
+while (isNaN(lastNum)) {
+    lastNum = +prompt(`Error. You enterd a string. Enter a last number, please :)`);
+}
 
-let numberTo = +prompt(`Enter number "to": `);
-let sum = numberFrom + 1;
-let evenNumber = confirm(`Entered nember must be even or odd (button "cancel") ?`);
-if (evenNumber) {
-    for (i = numberFrom; i <= numberTo; i++) {
-        console.log(sum)
+while (startNum > lastNum) {
+    lastNum = +prompt(`Enter larger last number than start number, please`);
+}
+
+let evenSum = confirm(`Do you want to skip even numbers ?`);
+document.writeln(evenSum ? `Skip even numbers <br>` : `Don't skip even numbers <br>`);
+
+let result = 0;
+
+for (let i = startNum; i <= lastNum; i++){    
+    if (evenSum) {
+        if (i % 2 === 0) {
+           continue;
+        } 
+        else {
+            result += i; 
+        }
     }
-    
+    else {
+        result += i;  
+    }  
+    console.log(result);
 }
+
+document.writeln(`
+Your start number is: ${startNum} <br>
+Your last number is: ${lastNum} <br>
+Result: ${result}`);
