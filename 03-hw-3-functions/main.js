@@ -1,13 +1,13 @@
-// 1. Создать функцию getMaxDigit(number) – которая получает любое число и выводит самую большую цифру в этом числе. Примеры: 1236 -> 6, 987 -> 9, 385 -> 8
-
+// Funtion #1
 function getMaxDigit(number = 17524) {
-    const maxNum = Math.max(number.indexOf());
-    return naxNum;
+    number = String(number).split('');
+    number = Math.max(...number);
+    return number;
 }
+console.log(getMaxDigit());
 
-// 2. Создать функцию, которая вычисляет степень числа. Не используя Math.pow и **. Используйте цикл
-
-function pow(num, exp) {
+//Function #2
+function pow(num = 2, exp = 3) {
     if (exp === 0) return 1;
     let resultPow = num;
     for(let i = 1; i <= exp; i++) {
@@ -15,51 +15,44 @@ function pow(num, exp) {
     }
     return resultPow;
 }
+console.log(pow());
 
-// 3. Создать функцию, которая форматирует имя, делая первую букву заглавной. ("влад" -> "Влад", "вЛАД" -> "Влад" и так далее);
-
+// Function #3
 function getCorrectName(name = 'ВЛАд') {
     let correctLettersName = name.toLowerCase();
     correctLettersName = correctLettersName[0].toUpperCase() + correctLettersName.slice(1);
     return correctLettersName;
 }
+console.log(getCorrectName());
 
-// 4. Создать функцию, которая вычисляет сумму оставшуюся после оплаты налога от заработной платы. (Налог = 18% + 1.5% -> 19.5%). Пример: 1000 -> 805
-
-function getSumWithTax(sum) {
+//Function #4
+function getSumWithTax(sum = 2000) {
     const TAX = (19.5 / 100) * sum;
     sum = sum - TAX;
     return sum;
 }
-console.log(getSumWithoutTax(2000));
+console.log(getSumWithoutTax());
 
-// 5. Создать функцию, которая возвращает случайное целое число в диапазоне от N до M. Пример: getRandomNumber(1, 10) -> 5
+// Function #5
+function getRandomNumber(low = 1, high = 10) {
+    return Math.floor(Math.random() * (high - low) + low);
+  }
+console.log(getRandomNumber());
 
-function getRanomNumber(n, m) {
-    let n = 1;
-    let m = 10;
-    for (let i = n; i <= m; i++) {
-        console.log(n)
-    }
-
-}
 
 // 6. Создать функцию, которая считает сколько раз определенная буква повторяется в слове. Пример: countLetter("а", "Асталависта") -> 4
 
-function getLetterA(word) {
-    let letterA = 'a'
-    if ( word == 'a') {
-        
-        console.log(letterA);
-    } else {
-        console.log(`Any letter 'a' is in this word`);
+function getLetterCount(word = 'ananas', letter = 'a') {
+    let countResult = 0;
+    for (let i = 0; i <= word.length; i++) {
+        if (word[i] === letter) {
+            countResult++
+        }
     }
-
+return countResult;
 }
 
-// 7. Создайте функцию конвертиующую доллары в гривны и наоборот в зависимости от наличия символа $ или UAH в строке. Пример: convertCurrency("100$") -> 2500 грн. или convertCurrency("2500UAH") -> 100$
-// Учтите, другие валюты не конвертируются, нужно выводить ошибку, а так же регистр uah не имеет значения.
-
+// Function #7 
 function convert(money) {
     const exchangeRate = 25;
     const toDollar = false;
@@ -78,13 +71,16 @@ function convert(money) {
 // Создайте функцию генерации случайного пароля (только числа), длинна устанавливается пользователем или по умолчанию = 8 символам.
 // Пример: getRandomPassword(4) -> 1875, getRandomPassword() -> 87240124
 
-function getRandomPassword(i) {
-    for (let i = 0; i <= 8; i++)
-}
+function getRandomPassword(countChar = 8) {
+         for (let i = 0; i <= countChar; i++) {
+            let number = Math.floor(Math.random(10) * 10);
+            console.log(number);
+            }
+        return number;
+    }
+console.log(getRandomPassword());
 
-
-// Создайте функцию, которая удаляет все буквы из предложения. Пример: deleteLetters('a', "blablabla") -> "blblbl"
-
+// Function #9
 function deleteLetters(word = "blablabla", letter = "a") {
     let pureWord = ''; 
    for (let i = 0; i < word.length; i++) {
@@ -94,5 +90,33 @@ function deleteLetters(word = "blablabla", letter = "a") {
    }
    return pureWord;
 }
+console.log(deleteLetters());
  
 
+// 10. Создайте функцию, которая проверяет является ли слово палиндромом. Пример: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false, isPalyndrom("Аргентина манит негра") -> true
+
+function isPalindrom(word = 'madam') {
+    let result = true;
+    const wordLength = word.length/2;
+    for (let i = 0; i < wordLength; i++) {
+    const leftChar = word[i];
+    console.log(leftChar);
+    const rightChar = word[word.length - (i + 1)];
+    console.log(rightChar);
+    if (leftChar !== rightChar) {
+        return false;
+    }
+}
+    return result;
+}
+
+console.log(isPalindrom());
+
+
+// Создайте функцию, которая удалит из предложения буквы, которые встречаются более 1 раза. Пример:
+
+function deleteDuplicateLetter(str = "Бисквит был очень нежный") {
+    
+    
+    return letter;
+}
