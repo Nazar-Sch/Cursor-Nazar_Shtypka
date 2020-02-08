@@ -68,15 +68,14 @@ function convert(money) {
     }
 }
 
-// Создайте функцию генерации случайного пароля (только числа), длинна устанавливается пользователем или по умолчанию = 8 символам.
-// Пример: getRandomPassword(4) -> 1875, getRandomPassword() -> 87240124
+// Function #8
 
 function getRandomPassword(countChar = 8) {
-         for (let i = 0; i <= countChar; i++) {
-            let number = Math.floor(Math.random(10) * 10);
-            console.log(number);
+    let randomPassword = '';
+        for (let i = 0; i < countChar; i++) {
+            randomPassword += Math.trunc(Math.random() * 10);
             }
-        return number;
+        return randomPassword;
     }
 console.log(getRandomPassword());
 
@@ -116,7 +115,9 @@ console.log(isPalindrom());
 // Создайте функцию, которая удалит из предложения буквы, которые встречаются более 1 раза. Пример:
 
 function deleteDuplicateLetter(str = "Бисквит был очень нежный") {
-    
-    
-    return letter;
-}
+    if (str[i] === str[i+1]) {
+        return true;
+    } else 
+        return false;
+    }
+console.log(deleteDuplicateLetter());
