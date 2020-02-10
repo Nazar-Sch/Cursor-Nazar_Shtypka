@@ -1,13 +1,12 @@
 // Funtion #1
-function getMaxDigit(number = 17524) {
+const getMaxDigit = function(number = 17524) {
     number = String(number).split('');
     number = Math.max(...number);
     return number;
 }
-console.log(getMaxDigit());
 
 //Function #2
-function pow(num = 2, exp = 3) {
+const pow = function(num = 2, exp = 3) {
     if (exp === 0) return 1;
     let resultPow = num;
     for(let i = 1; i <= exp; i++) {
@@ -15,109 +14,118 @@ function pow(num = 2, exp = 3) {
     }
     return resultPow;
 }
-console.log(pow());
+
 
 // Function #3
-function getCorrectName(name = 'ВЛАд') {
+const getCorrectName = function(name = 'ВЛАд') {
     let correctLettersName = name.toLowerCase();
     correctLettersName = correctLettersName[0].toUpperCase() + correctLettersName.slice(1);
     return correctLettersName;
 }
-console.log(getCorrectName());
 
 //Function #4
-function getSumWithTax(sum = 2000) {
+const getSumWithTax = function(sum = 2000) {
     const TAX = (19.5 / 100) * sum;
     sum = sum - TAX;
     return sum;
 }
-console.log(getSumWithoutTax());
 
 // Function #5
-function getRandomNumber(low = 1, high = 10) {
+const getRandomNumber = function(low = 1, high = 10) {
     return Math.floor(Math.random() * (high - low) + low);
-  }
-console.log(getRandomNumber());
+}
 
-
-// 6. Создать функцию, которая считает сколько раз определенная буква повторяется в слове. Пример: countLetter("а", "Асталависта") -> 4
-
-function getLetterCount(word = 'ananas', letter = 'a') {
+// Function #6
+const getLetterCount = function(word = 'ananas', letter = 'a') {
     let countResult = 0;
     for (let i = 0; i <= word.length; i++) {
         if (word[i] === letter) {
             countResult++
         }
     }
-return countResult;
+    return countResult;
 }
 
 // Function #7 
-function convert(money) {
+const convertMoney = function(money = 100) {
     const exchangeRate = 25;
     const toDollar = false;
     const toUah = true;
     if (toUah) {
         money = money * exchangeRate;
-        return money + ' грн';
+        return `${money} грн`;
     } else if (toDollar){
         money = money / exchangeRate;
-        return money + '$';
+        return `${money}$`;
     } else {
         return `Error. We don't convert this money`;
     }
 }
 
 // Function #8
-
-function getRandomPassword(countChar = 8) {
+const getRandomPassword = function(countChar = 8) {
     let randomPassword = '';
-        for (let i = 0; i < countChar; i++) {
-            randomPassword += Math.trunc(Math.random() * 10);
-            }
-        return randomPassword;
+    for (let i = 0; i < countChar; i++) {
+        randomPassword += Math.trunc(Math.random() * 10);
     }
-console.log(getRandomPassword());
+    return randomPassword;
+}
 
 // Function #9
-function deleteLetters(word = "blablabla", letter = "a") {
+const deleteLetters = function(word = "blablabla", letter = "b") {
     let pureWord = ''; 
-   for (let i = 0; i < word.length; i++) {
-       if (word[i] !== letter) {
-           pureWord += word[i];
-       }
-   }
-   return pureWord;
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] !== letter) {
+            pureWord += word[i];
+        }
+    }
+    return pureWord;
 }
-console.log(deleteLetters());
- 
 
-// 10. Создайте функцию, которая проверяет является ли слово палиндромом. Пример: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false, isPalyndrom("Аргентина манит негра") -> true
-
-function isPalindrom(word = 'madam') {
+// Function 10
+const isPalindrom = function(word = 'madam') {
     let result = true;
     const wordLength = word.length/2;
     for (let i = 0; i < wordLength; i++) {
-    const leftChar = word[i];
-    console.log(leftChar);
-    const rightChar = word[word.length - (i + 1)];
-    console.log(rightChar);
-    if (leftChar !== rightChar) {
-        return false;
+        const leftChar = word[i];
+        const rightChar = word[word.length - (i + 1)];
+        if (leftChar !== rightChar) {
+            return false;
+        }
     }
-}
     return result;
 }
 
-console.log(isPalindrom());
-
-
-// Создайте функцию, которая удалит из предложения буквы, которые встречаются более 1 раза. Пример:
-
-function deleteDuplicateLetter(str = "Бисквит был очень нежный") {
-    if (str[i] === str[i+1]) {
-        return true;
-    } else 
-        return false;
+// Function 11
+const deleteDuplicateLettes = function(str = 'ananas') {
+    let resultString = '';
+    for (let i = 0; i < str.length; i++) {
+        if (str.lastIndexOf(str[i]) === str.indexOf(str[i])) {
+            resultString += str[i];
+        }
     }
-console.log(deleteDuplicateLetter());
+    return resultString;
+}
+
+// F#1
+console.log(`Max number: ${getMaxDigit()}`);
+// F#2
+console.log(`Pow: ${pow()}`);
+// F#3
+console.log(`Correct name: ${getCorrectName()}`);
+// F#4
+console.log(`Sum with TAX: ${getSumWithTax()}`);
+// F#5
+console.log(`Random number: ${getRandomNumber()}`);
+// F#6
+console.log(`Letter count: ${getLetterCount()}`);
+// F#7
+console.log(`Convert money: ${convertMoney()}`);
+// F#8
+console.log(`Random password: ${getRandomPassword()}`);
+// F#9
+console.log(`Delete letters: ${deleteLetters()}`);
+// F#10
+console.log(`Palindrom true/false : ${isPalindrom()}`);
+// F#11
+console.log(`Deleted duplicate letters: ${deleteDuplicateLettes()}`);
