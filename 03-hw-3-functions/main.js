@@ -25,8 +25,9 @@ const getCorrectName = function(name = 'ВЛАд') {
 
 //Function #4
 const getSumWithTax = function(sum = 2000) {
-    const TAX = (19.5 / 100) * sum;
-    sum = sum - TAX;
+    const precentageTax = 19.5;
+    const tax = (precentageTax / 100) * sum;
+    sum = sum - tax;
     return sum;
 }
 
@@ -58,7 +59,7 @@ const convertMoney = function(money = 100) {
         money = money / exchangeRate;
         return `${money}$`;
     } else {
-        return `Error. We don't convert this money`;
+        throw new Error(`Error. We don't convert this money`);
     }
 }
 
@@ -84,16 +85,16 @@ const deleteLetters = function(word = "blablabla", letter = "b") {
 
 // Function 10
 const isPalindrom = function(word = 'madam') {
-    let result = true;
     const wordLength = word.length/2;
     for (let i = 0; i < wordLength; i++) {
         const leftChar = word[i];
         const rightChar = word[word.length - (i + 1)];
         if (leftChar !== rightChar) {
             return false;
+        } else {
+            return true;
         }
     }
-    return result;
 }
 
 // Function 11
