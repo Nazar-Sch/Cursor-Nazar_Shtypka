@@ -1,5 +1,4 @@
 // Task #1
-
 const getRandomArray = (length, min, max) => {
     const arr = [];
     max = Math.floor(max);
@@ -23,15 +22,12 @@ const getModa = (...numbers) => {
 
 
 // Task #3
-// Создайте функцию getAverage(...numbers) – которая считает среднее арифметическое всех переданных в неё аргументов. 
-// НЕЦЕЛЫЕ ЧИСЛА ИГНОРИРУЮТСЯ
-// Пример: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4
-
+let numbers = [6, 2.135425, 55, 11.235354, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 const getAverage = (...numbers) => {
-    
-    return average;
-}
-
+    const getSum = numbers.reduce((previus, current) => Math.round(previus + current));
+    const result = getSum / numbers.length;
+    return result; 
+};
 // Task #4
 // Создайте функцию getMedian(...numbers) – которая считает медиану всех переданных в неё аргументов. НЕЦЕЛЫЕ ЧИСЛА ИГНОРИРУЮТСЯ
 // Пример: getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 23 
@@ -48,51 +44,52 @@ const countPositiveNumbers = numbersArr.filter((num) => num > 0);
 const getDividedByFive = numbersArr.filter((num) => num % 5 === 0);
 
 // Task #8
-// 'fucking'.replace(new RegExp('fuck', 'g'), '****')
-// 'shit'.replace(new RegExp('shit', 'g'), '****');
 const replaceBadWords = str => {
     const badWords = ['fuck', 'shit'];
     const arrRegExp = new RegExp(badWords.join("|"), 'g');
     return str.replace(arrRegExp, '****');
-    };
-    
-    
-    // Task #9
-    const divideByThree = word => {
-        const wordArr =  [];
-        word = word.toLowerCase().trim();
-        for(let i = 0; i < word.length; i+=3) {
-            wordArr.push(word.slice(i, i + 3));
-        } 
-        return wordArr;
-    }
-    
-    
-    
-    // // task1
-    // console.log(randomArray);
-    
-    // // task2
-    
-    // // task3
-    
-    // // task4
-    
-    // // task5
-    // console.log(filterEvenNumbers);
-    
-    // // task6
-    // console.log(countPositiveNumbers.length);
-    
-    // // task7
-    // console.log(getDividedByFive);
+};
 
-    // Task8
-    // console.log(replaceBadWords("Holy shit!"));
-    
-    // // task9
-    // console.log(divideByThree('    ananas '));
-    
-    
-    
-    
+
+// Task #9
+const divideByThree = word => {
+    const wordArr =  [];
+    word = word.toLowerCase().trim();
+    for(let i = 0; i < word.length; i+=3) {
+        wordArr.push(word.slice(i, i + 3));
+    } 
+    return wordArr;
+}
+
+
+
+// // task1
+// console.log(randomArray);
+
+// // task2
+
+// // task3
+// console.log(getAverage(...numbers));
+
+// // task4
+
+// // task5
+// console.log(filterEvenNumbers);
+
+// // task6
+// console.log(countPositiveNumbers.length);
+
+// // task7
+// console.log(getDividedByFive);
+
+// Task8
+// console.log(replaceBadWords("Holy shit!"));
+
+// // task9
+// console.log(divideByThree('    ananas '));
+
+// task10
+
+
+
+
