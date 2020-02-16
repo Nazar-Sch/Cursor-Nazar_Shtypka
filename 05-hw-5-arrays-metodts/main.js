@@ -29,9 +29,12 @@ const getAverage = (...numbers) => {
     return result; 
 };
 // Task #4
-// Создайте функцию getMedian(...numbers) – которая считает медиану всех переданных в неё аргументов. НЕЦЕЛЫЕ ЧИСЛА ИГНОРИРУЮТСЯ
-// Пример: getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 23 
-// Пример: getMedian(1, 2, 3, 4) –> 2.5 Пример: getMedian(1, 2, 3, 4, 5) –> 3
+const getMedian = (...numbers) => {
+    const sortedNumbers = numbers.sort((a,b) => a - b);
+    const lowMiddleIndex = Math.floor((sortedNumbers.length - 1) / 2);
+    const highMiddleIndex = Math.ceil((sortedNumbers.length - 1) / 2);
+    return Math.round((sortedNumbers[lowMiddleIndex] + sortedNumbers[highMiddleIndex]) / 2);
+};
 
 // Task #5
 const filterEvenNumbers = randomArray.filter((num) => num % 2 === 0);
@@ -63,32 +66,31 @@ const divideByThree = word => {
 
 
 
-// // task1
-// console.log(randomArray);
+// task1
+console.log(randomArray);
 
-// // task2
+// task2
 
-// // task3
-// console.log(getAverage(...numbers));
+// task3
+console.log(getAverage(...numbers));
 
-// // task4
+// task4
+console.log(getMedian(...numbers));
 
-// // task5
-// console.log(filterEvenNumbers);
+// task5
+console.log(filterEvenNumbers);
 
-// // task6
-// console.log(countPositiveNumbers.length);
+// task6
+console.log(countPositiveNumbers.length);
 
-// // task7
-// console.log(getDividedByFive);
+// task7
+console.log(getDividedByFive);
 
 // Task8
-// console.log(replaceBadWords("Holy shit!"));
+console.log(replaceBadWords("Holy shit!"));
 
-// // task9
-// console.log(divideByThree('    ananas '));
-
-// task10
+// task9
+console.log(divideByThree('    ananas '));
 
 
 
