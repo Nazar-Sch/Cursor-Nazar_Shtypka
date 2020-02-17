@@ -11,16 +11,6 @@ const getRandomArray = (length, min, max) => {
 }
 const randomArray = getRandomArray(length = 5, max=25.789, min = 1.3);
 
-// Task #2
-// Создайте функцию getModa(...numbers) – которая вычисляет моду всех переданных в неё аргументов. НЕЦЕЛЫЕ ЧИСЛА ИГНОРИРУЮТСЯ
-// Пример: getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 2
-
-const getModa = (...numbers) => {
-    
-    return moda;
-}
-
-
 // Task #3
 let numbers = [6, 2.135425, 55, 11.235354, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 const getAverage = (...numbers) => {
@@ -28,6 +18,8 @@ const getAverage = (...numbers) => {
     const result = getSum / numbers.length;
     return result; 
 };
+
+
 // Task #4
 const getMedian = (...numbers) => {
     const sortedNumbers = numbers.sort((a,b) => a - b);
@@ -65,11 +57,8 @@ const divideByThree = word => {
 }
 
 
-
 // task1
 console.log(randomArray);
-
-// task2
 
 // task3
 console.log(getAverage(...numbers));
