@@ -28,7 +28,7 @@ const students = [{
 // Task #1
 const getSubject = studentsSubject => {
   
-  let subjectArr = [];
+  const subjectArr = [];
   for(let key in studentsSubject['subjects']) {
     subjectArr.push(key);
   }
@@ -45,17 +45,17 @@ console.log(getSubject(students[0])); //["Math", "Algorithms", "Data science"]
 
 // Task #2
 const getAverageMark = studentsMarks  => {
-    let {subjects} = studentsMarks;
-    let marks = Object.values(subjects);
-    let marksArr = [].concat(...marks);
-    let result = (marksArr.reduce((previus, current) =>  current + previus)) / marksArr.length;
+    const {subjects} = studentsMarks;
+    const marks = Object.values(subjects);
+    const marksArr = [].concat(...marks);
+    const result = (marksArr.reduce((previus, current) =>  current + previus)) / marksArr.length;
     return result.toFixed(2);
   } 
 console.log(`Student's average mark is: ${getAverageMark(students[0])}`);
 
 // Task #3
 const getStudentsInfo = student => {
-  let {course, name} = student;
+  const {course, name} = student;
   const infObj = {
     course,
     name,
@@ -69,7 +69,7 @@ console.log(getStudentsInfo(students[0]));
 const getStudentsNames = (sortedNames) => {
   const namesArr = [];
   students.map((student) => {
-    let {name} = student;
+    const {name} = student;
     namesArr.push(name);
   });
   return sortedNames = namesArr.sort();
