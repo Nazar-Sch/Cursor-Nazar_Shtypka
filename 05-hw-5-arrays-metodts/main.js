@@ -9,7 +9,7 @@ const getRandomArray = (length, min, max) => {
     }
     return arr;
 }
-const randomArray = getRandomArray(length = 5, max=25.789, min = 1.3);
+const randomArray = getRandomArray(5, 25.789, 1.3);
 
 // Task #3
 let numbers = [6, 2.135425, 55, 11.235354, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
@@ -29,14 +29,17 @@ const getMedian = (...numbers) => {
 };
 
 // Task #5
-const filterEvenNumbers = randomArray.filter((num) => num % 2 === 0);
+const filterEvenNumbers = randomNumArr => randomNumArr.filter(num => num % 2 !== 0);
 
 // Task #6
 const numbersArr = [1, -2, 3, -4, -5, 6, 10, 15, 6, 55, 11, 78, 55, 77, 57, 87, 23, 2, 150];
-const countPositiveNumbers = numbersArr.filter((num) => num > 0);
+const countPositiveNumbers = numArr => {
+    const numbersMoreNull = numArr.filter((num) => num > 0);
+    return numbersMoreNull.length;
+}
 
 // Task #7
-const getDividedByFive = numbersArr.filter((num) => num % 5 === 0);
+const getDividedByFive = numArr => numArr.filter((num) => num % 5 === 0);
 
 // Task #8
 const replaceBadWords = str => {
@@ -58,29 +61,25 @@ const divideByThree = word => {
 
 
 // task1
-console.log(randomArray);
+console.log(` Task 1: ${randomArray}`);
 
 // task3
-console.log(getAverage(...numbers));
+console.log(` Task 3: ${getAverage(...numbers)}`);
 
 // task4
-console.log(getMedian(...numbers));
+console.log(` Task 4: ${getMedian(...numbers)}`);
 
 // task5
-console.log(filterEvenNumbers);
+console.log(` Task 5: ${filterEvenNumbers(randomArray)}`);
 
 // task6
-console.log(countPositiveNumbers.length);
+console.log(` Task 6: ${countPositiveNumbers(numbersArr)}`);
 
 // task7
-console.log(getDividedByFive);
+console.log(` Task 7: ${getDividedByFive(numbersArr)}`);
 
 // Task8
-console.log(replaceBadWords("Holy shit!"));
+console.log(` Task 8: ${replaceBadWords("Holy shit!")}`);
 
 // task9
-console.log(divideByThree('    ananas '));
-
-
-
-
+console.log(` Task 9: ${divideByThree('    ananas ')}`);
