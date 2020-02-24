@@ -4,39 +4,40 @@ const litva = { tax: 0.15, middleSalary: 1509, vacancies: 1114 };
 
 
 // Task #1
-const getMyTax = function(salary) {
+function getMyTax(salary) {
   return this.tax * salary;
 }
-const myTax = getMyTax.call(ukraine, 10000);
-console.log(myTax);
+console.log(getMyTax.call(ukraine, 1000));
 
 // Task #2
-const getMiddleTaxes = function(country) {
+function getMiddleTaxes(country) {
   return this.tax * this.middleSalary;
 }
-const middleTaxes = getMiddleTaxes.call(ukraine);
-console.log(middleTaxes);
+console.log(getMiddleTaxes.call(ukraine));
 
 // Task #3
-const getTotalTaxes = function(country) {
+function getTotalTaxes(country) {
   return this.tax * this.middleSalary * this.vacancies;
 }
-const totalTaxes = getTotalTaxes.call(ukraine);
-console.log(totalTaxes);
+console.log(getTotalTaxes.call(latvia));
 
 // Task #4
-const getMySalary = function(country) {
+function getMySalary(country) {
     function randomNumber(max, min) {
+      max = 2000;
+      min = 1500;
         return Math.floor(Math.random() * (max - min) + min);
     };
-    const salary = randomNumber(2000, 1500);
-    const tax = getMyTax.call(country, salary);
-    const profit = salary - tax;
+    const salary = randomNumber();
+    const taxes = Math.round(getMyTax.call(country, salary));
+    const profit = salary - taxes;
     const mySalaryObj = {
         salary,
-        tax,
+        taxes,
         profit,
     };
     return mySalaryObj;
 }
-console.log(getMySalary(ukraine));
+setInterval(() => {
+  console.log(getMySalary(ukraine))
+}, 10000);
