@@ -37,7 +37,9 @@ function getMySalary(country) {
         profit,
     };
     return mySalaryObj;
-}
-setInterval(() => {
-  console.log(getMySalary(ukraine))
-}, 10000);
+  }
+  
+  // setInterval(() => {
+  //   console.log(getMySalary(ukraine))
+  // }, 10000);
+  console.log(getMySalary(ukraine));

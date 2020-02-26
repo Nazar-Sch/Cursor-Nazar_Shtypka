@@ -77,6 +77,13 @@ const getStudentsNames = (sortedNames) => {
 console.log(getStudentsNames());
 
 // Task #5
+const getBestStudents = (students) => {
+  return students.reduce((previus, current) => getAverageMark(current) > getAverageMark(previus) ? current : previus).name;
+}
+console.log(getBestStudents(students));
+
+
+// Task #6
 const calculateWordLetters = (str) => {
   const letter = {};
   for(let i = 0; i <= str.length; i++) {
