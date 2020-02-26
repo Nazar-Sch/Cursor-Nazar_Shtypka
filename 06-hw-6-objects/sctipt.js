@@ -67,11 +67,7 @@ console.log(getStudentsInfo(students[0]));
 
 // Task #4
 const getStudentsNames = (sortedNames) => {
-  const namesArr = [];
-  students.map((student) => {
-    const {name} = student;
-    namesArr.push(name);
-  });
+  const namesArr = students.map(student => student.name);
   return sortedNames = namesArr.sort();
 }
 console.log(getStudentsNames());
