@@ -10,13 +10,13 @@ function getMyTax(salary) {
 console.log(getMyTax.call(ukraine, 1000));
 
 // Task #2
-function getMiddleTaxes(country) {
+function getMiddleTaxes() {
   return this.tax * this.middleSalary;
 }
 console.log(getMiddleTaxes.call(ukraine));
 
 // Task #3
-function getTotalTaxes(country) {
+function getTotalTaxes() {
   return this.tax * this.middleSalary * this.vacancies;
 }
 console.log(getTotalTaxes.call(latvia));
@@ -36,10 +36,8 @@ function getMySalary(country) {
         taxes,
         profit,
     };
-    return mySalaryObj;
+    return setInterval(() => {
+      console.log(mySalaryObj)
+    }, 10000);
   }
-  
-  // setInterval(() => {
-  //   console.log(getMySalary(ukraine))
-  // }, 10000);
-  console.log(getMySalary(ukraine));
+  getMySalary(ukraine);
