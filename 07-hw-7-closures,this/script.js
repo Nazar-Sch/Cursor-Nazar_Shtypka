@@ -23,21 +23,15 @@ console.log(getTotalTaxes.call(latvia));
 
 // Task #4
 function getMySalary(country) {
-    function randomNumber(max, min) {
-      max = 2000;
-      min = 1500;
+    function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     };
-    const salary = randomNumber();
-    const taxes = Math.round(getMyTax.call(country, salary));
-    const profit = salary - taxes;
-    const mySalaryObj = {
-        salary,
-        taxes,
-        profit,
-    };
-    return setInterval(() => {
-      console.log(mySalaryObj)
+    const interval = setInterval(() => {
+      const salary = randomNumber(1500, 2000);
+      const taxes = Math.round(getMyTax.call(country, salary));
+      const profit = salary - taxes;
+      console.log({salary, taxes, profit,});
     }, 10000);
+    return interval;
   }
   getMySalary(ukraine);
