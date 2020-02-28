@@ -13,29 +13,40 @@
 
 
 class Student {
-    constructor(univercity, course, fullName, marks) {
+    constructor(univercity, course, fullName) {
         this.univercity = univercity;
         this.course = course;
         this.fullName = fullName;
-        this.marks = marks;
-        // this.getAverageMark = getAverageMark;
+        this.marks = [5,4,4,5];
+        this.dismiss = false;
+
     }
     getInfo() {
         return `${this.course} ${this.univercity} ${this.fullName}`;
     }
-
     get studentsMarks() {
+        if (this.dismiss) {
+            return null;
+        }
         return this.marks;
     }
-
     set studentsMarks(value) {
+        if (this.dismiss) {
+            return null;
+        }
         return this.marks.push(value);
     }
     getAverageMark() {
-        // return Math.floor(Math.random() * (max - min) + min);
-        return this.marks.reduce((acc, val) => (acc + val), 0)/this.marks.length;
+        return this.marks.reduce((acc, val) => (acc + val), 0) / this.marks.length;
     }
-
+    getDismissStudent() {
+        this.dismiss = true;
+        return `Dismessed student!`;   
+    }
+    getRecoverStudent() {
+        this.dismiss = false;
+        return `Student recovered!`;
+    }
     
 }
 const student = new Student(`Національний Університет 'Львівська політехніка'`, `1 курс`, `Назар Назарович`, [5,4,4,5]);
@@ -57,6 +68,34 @@ document.writeln(`<hr> Students marks: ${student.marks} <hr>`);
 console.log(`Students average mark: ${student.getAverageMark()}`);
 document.writeln(`<hr> Students average mark: ${student.getAverageMark()} <hr>`);
 
-// Get dismiss
+// Get dismiss student
+console.log(student.getDismissStudent());
+document.writeln(`<hr>${student.getDismissStudent()}<hr>`);
+
+// Get recover student
+console.log(student.getRecoverStudent());
+document.writeln(`<hr>${student.getRecoverStudent()}<hr>`);
 
 
+// Advanced 
+class BudgetStudent extends Student {
+    constructor() {
+        super();
+        this.scolarship = setInterval(() => {
+            console.log(this.getScolarship());
+        }, 30000);
+    }
+
+    getScolarship() {
+        if(this.dismiss === false && super.getAverageMark() >= 4.0) {
+            return 'Студент отримав стипендію у розмірі 1400 грн!';
+        } else {
+            return 'Студент не отримав стипендію';
+        }
+    }
+    getTimer() {
+        return this.scolarship;
+    }
+}
+const budget = new BudgetStudent;
+budget.getTimer();
