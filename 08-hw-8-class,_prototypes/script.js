@@ -81,7 +81,7 @@ document.writeln(`<hr>${student.getRecoverStudent()}<hr>`);
 class BudgetStudent extends Student {
     constructor() {
         super();
-        this.scolarship = setInterval(() => {
+        this.scolarshipTimer = setInterval(() => {
             console.log(this.getScolarship());
         }, 30000);
     }
@@ -94,8 +94,9 @@ class BudgetStudent extends Student {
         }
     }
     getTimer() {
-        return this.scolarship;
+        return this.scolarshipTimer;
     }
 }
 const budget = new BudgetStudent;
+document.writeln(budget.getScolarship());
 budget.getTimer();
