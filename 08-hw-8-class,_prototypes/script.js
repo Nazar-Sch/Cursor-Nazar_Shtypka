@@ -79,7 +79,8 @@ class BudgetStudent extends Student {
         setInterval(() => {
             console.log(this.getScolarship());
         }, 30000);
-
+        this.studMarks =  [5, 4, 5, 4];
+        this.isDismiss = false; 
     }
     getScolarship() {
         if(this.dismiss === false && this.getAverageMark() >= 4.0) {
