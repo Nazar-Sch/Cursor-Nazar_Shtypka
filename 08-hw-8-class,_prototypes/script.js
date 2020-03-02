@@ -49,29 +49,27 @@ class Student {
 const student = new Student(`Національний Університет 'Львівська політехніка'`, `1 курс`, `Назар Назарович`);
 
 // Get info
-console.log(`Students info: ${student.getInfo()}`);
-document.writeln(`<hr> Students info: ${student.getInfo()} <hr>`);
+console.log(`Student's info: ${student.getInfo()}`);
+document.writeln(`<hr> Student's info: ${student.getInfo()} <hr>`);
 
 // Get students marks
-console.log(`Students marks: ${student.marks}`);
-document.writeln(`<hr> Students marks: ${student.marks} <hr>`);
+console.log(`Student's marks: ${student.marks}`);
+document.writeln(`<hr> Student's marks: ${student.marks} <hr>`);
 
 // Add new mark
 student.studentsMarks = 5;
 console.log(`Students marks: ${student.marks}`);
-document.writeln(`<hr> Students marks: ${student.marks} <hr>`);
+document.writeln(`<hr> Student's marks: ${student.marks} <hr>`);
 
 // Get average mark
-console.log(`Students average mark: ${student.getAverageMark()}`);
-document.writeln(`<hr> Students average mark: ${student.getAverageMark()} <hr>`);
+console.log(`Student's average mark: ${student.getAverageMark()}`);
+document.writeln(`<hr> Student's average mark: ${student.getAverageMark()} <hr>`);
 
 // Get dismiss student
 console.log(student.getDismissStudent());
-document.writeln(`<hr>${student.getDismissStudent()}<hr>`);
 
 // Get recover student
 console.log(student.getRecoverStudent());
-document.writeln(`<hr>${student.getRecoverStudent()}<hr>`);
 
 
 // Advanced 
