@@ -19,7 +19,6 @@ class Student {
         this.fullName = fullName;
         this.marks = [5,4,4,5];
         this.dismiss = false;
-
     }
     getInfo() {
         return `${this.course} ${this.univercity} ${this.fullName}`;
@@ -40,16 +39,14 @@ class Student {
         return this.marks.reduce((acc, val) => (acc + val), 0) / this.marks.length;
     }
     getDismissStudent() {
-        this.dismiss = true;
-        return `Dismessed student!`;   
+        return this.dismiss = true;;   
     }
     getRecoverStudent() {
-        this.dismiss = false;
-        return `Student recovered!`;
+        return this.dismiss = false;;
     }
     
 }
-const student = new Student(`Національний Університет 'Львівська політехніка'`, `1 курс`, `Назар Назарович`, [5,4,4,5]);
+const student = new Student(`Національний Університет 'Львівська політехніка'`, `1 курс`, `Назар Назарович`);
 
 // Get info
 console.log(`Students info: ${student.getInfo()}`);
@@ -79,24 +76,21 @@ document.writeln(`<hr>${student.getRecoverStudent()}<hr>`);
 
 // Advanced 
 class BudgetStudent extends Student {
-    constructor() {
-        super();
-        this.scolarshipTimer = setInterval(() => {
+    constructor(univercity, course, fullName) {
+        super(univercity, course, fullName);
+        setInterval(() => {
             console.log(this.getScolarship());
         }, 30000);
-    }
 
+    }
     getScolarship() {
-        if(this.dismiss === false && super.getAverageMark() >= 4.0) {
+        if(this.dismiss === false && this.getAverageMark() >= 4.0) {
             return 'Студент отримав стипендію у розмірі 1400 грн!';
         } else {
             return 'Студент не отримав стипендію';
         }
     }
-    getTimer() {
-        return this.scolarshipTimer;
-    }
 }
-const budget = new BudgetStudent;
+const budget = new BudgetStudent(`Національний Університет 'Львівська політехніка'`, `1 курс`, `Сан Педро`);
+console.log(budget.getInfo());
 document.writeln(budget.getScolarship());
-budget.getTimer();
