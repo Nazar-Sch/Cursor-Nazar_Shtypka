@@ -8,9 +8,10 @@ function generateBlocks() {
         return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
     }
     function createBlocks() {
+        const blocksLength = 25;
         const parentSquare = document.getElementById('parentSquare');
         parentSquare.innerHTML = '';
-        for(let i = 0; i < 25; i++) {
+        for(let i = 0; i < blocksLength; i++) {
             const block = document.createElement('div');
             block.style.height = "50px";
             block.style.width = "50px";
