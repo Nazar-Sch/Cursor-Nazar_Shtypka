@@ -1,33 +1,52 @@
-const doNote = new Audio("././audio/1.mp3");
-const re = new Audio("././audio/2.mp3");
-const mi = new Audio("././audio/3.mp3");
-const fa = new Audio("././audio/4.mp3");
-const sol = new Audio("././audio/5.mp3");
-const la = new Audio("././audio/6.mp3");
-const si = new Audio("././audio/7.mp3");
-
-function play(audio, id) {
-    return document.getElementById(id)
-    .addEventListener('click', function() {
-        // console.log(audio);
-        // audio.pause();
-        audio.currentTime = 0;
-        audio.play();
-        // setTimeout(() => (audio.volume = 0.8), 400);
-        // setTimeout(() => (audio.volume = 0.6), 800);
-        // setTimeout(() => (audio.volume = 0), 1000);
-        // setTimeout(() => (audio.volume = 0.2), 1600);
-    }); 
+const playSound = (soundUrl) => {
+    const audio = new Audio();
+    audio.src = soundUrl;
+    audio.autoplay = true;
+};
+function play(url, id) {
+    const onMousePlay = document.getElementById(id);
+    return onMousePlay.addEventListener('click', function() {
+        playSound(url);
+    });
 }
-const playDo = play(doNote, 'do');
-const playRe = play(re, 're');
-const playMi = play(mi, 'mi');
-const playFa = play(fa, 'fa');
-const playSol = play(sol, 'sol');
-const playLa = play(la, 'la');
-const playSi = play(si, 'si');
+document.addEventListener('keydown', function (event) {
+switch (event.keyCode) {
+    case 65:
+        return playSound("././audio/1.mp3");
+    case 81:
+        return playSound("././audio/b1.mp3");
+    case 83:
+        return playSound("././audio/2.mp3");
+    case 87:
+        return playSound("././audio/b2.mp3");
+    case 68:
+        return playSound("././audio/3.mp3");
+    case 70:
+        return playSound("././audio/4.mp3");
+    case 82:
+        return playSound("././audio/b3.mp3");
+    case 71:
+        return playSound("././audio/5.mp3");
+    case 84:
+        return playSound("././audio/b4.mp3");
+    case 72:
+        return playSound("././audio/6.mp3");
+    case 89:
+        return playSound("././audio/b5.mp3");
+    case 74:
+        return playSound("././audio/7.mp3");
+}
+});
+const playDo = play("././audio/1.mp3", 'do');
+const playRe = play("././audio/2.mp3", 're');
+const playMi = play("././audio/3.mp3", 'mi');
+const playFa = play("././audio/4.mp3", 'fa');
+const playSol = play("././audio/5.mp3", 'sol');
+const playLa = play("././audio/6.mp3", 'la');
+const playSi = play("././audio/7.mp3", 'si');
 
-window.addEventListener('keydown', ({keyCode}) => {
-    // Press a
-    if (keyCode === 65) return play(doNote, 'do');
-})
+const playDoMinor = play("././audio/b1.mp3", 'playDoMinor');
+const playReMinor = play("././audio/b2.mp3", 'playReMinor');
+const playFaMinor = play("././audio/b3.mp3", 'playFaMinor');
+const playSolMinor = play("././audio/b4.mp3", 'playSolMinor');
+const playLaMinor = play("././audio/b5.mp3", 'playLaMinor');
