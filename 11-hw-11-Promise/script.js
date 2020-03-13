@@ -1,22 +1,24 @@
 const TIME_OUT = 50;
 async function getRandomChinese(length) {
-    try {
+        const time = length * TIME_OUT;
         let chineseWord = '';
         for (let i = 0; i < length; i++) {
         let newPromise = new Promise((resolve) => {
             setTimeout(() => {
                 let sign = Date.now().toString().substr(-5);
                 resolve(String.fromCharCode(sign))
-            }, length * TIME_OUT);
+            }, time);
         })
         await newPromise.then(letter => {
             chineseWord += letter;
         })
     }
-    console.log(chineseWord);
+    console.log(`
+    Random letters: ${chineseWord}. 
+
+    Spended time: ${time}ms
+    `);
     return chineseWord;
-    } catch(err) {
-        console.log(err);
-    }
 }
-getRandomChinese(5);
+const lengthNum = Number(prompt('Please, enter number: ', 7));
+console.log(getRandomChinese(lengthNum));
