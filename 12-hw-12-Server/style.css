@@ -1,0 +1,58 @@
+body {
+    background-image: url(./img/starwars-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    /* background-color: black; */
+    font-family: 'News Cycle', sans-serif;
+    color: #ff6;
+    font-size: 16px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.logo-img {
+    width: 280px;
+    height: 140px;
+}
+.buttons {
+    display: flex;
+   justify-content: center;
+   margin-top: 25px;
+}
+.films {
+    display: flex;
+    flex-direction: row;
+    /* align-items: baseline; */
+}
+.btn {
+    background-color: transparent;
+    border: 0;
+    color: #ff6;
+    font-size: 42px;
+    cursor: pointer;
+    font-family: 'News Cycle', sans-serif;
+    letter-spacing:.15em;
+    width: 100px;
+}
+.btn-getPlanet {
+    color: rgb(75, 213, 238);
+    margin-left: 25px;
+}
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    filter: drop-shadow(0 0 1px #fff);
+
+}
+.charList {
+    border: 1px solid rgb(75, 213, 238, 0.5);
+    width: 250px;
+    height: 200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
