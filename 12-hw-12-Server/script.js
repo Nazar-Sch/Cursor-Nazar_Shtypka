@@ -1,9 +1,30 @@
 const BASE_URL = 'https://swapi.co/api';
+const images = {
+    'https://swapi.co/api/people/1/': './img/luke.webp',
+    'https://swapi.co/api/people/2/': './img/C-3PO.webp',
+    'https://swapi.co/api/people/3/': './img/R2-D2.webp',
+    'https://swapi.co/api/people/4/': './img/dartvader.webp',
+    'https://swapi.co/api/people/5/': './img/Leia-Organa.webp',
+    'https://swapi.co/api/people/6/': './img/OwenLars.webp',
+    'https://swapi.co/api/people/7/': './img/BeruCard.webp',
+    'https://swapi.co/api/people/8/': './img/R5d4.webp',
+    'https://swapi.co/api/people/9/': './img/BiggsHS.webp',
+    'https://swapi.co/api/people/10/': './img/Obi-Wan-Kenobi.webp',
+    'https://swapi.co/api/people/11/': './img/Tarkin.webp',
+    'https://swapi.co/api/people/12/': './img/Greedo.webp',
+    'https://swapi.co/api/people/13/': './img/chewbaca.webp',
+    'https://swapi.co/api/people/14/': './img/Han-Solo.webp',
+    'https://swapi.co/api/people/15/': './img/Porkins.webp',
+    'https://swapi.co/api/people/16/': './img/Jabba.webp',
+    'https://swapi.co/api/people/17/': './img/Porkins.webp',
+    'https://swapi.co/api/people/18/': './img/Raymus.webp',
+}
 
 // Functions
-async function getCharacterFromAPI(film) {
+async function getCharacterFromAPI(filmId) {
+    filmId = document.getElementById('filmId').value;
     loader.classList.add('active');
-    const res = await axios.get(BASE_URL + `/films/${film}/`);
+    const res = await axios.get(BASE_URL + `/films/${filmId}/`);
     return Promise.all(res.data.characters.map(async (el) => {
         const response = await axios.get(el).then((char) => char.data);
         return response;
@@ -17,6 +38,9 @@ function renderCharacters(response) {
         const charactersInfo = document.createElement('div');
         charactersInfo.classList = 'charList';
         charactersInfo.innerHTML = `
+        <div class="imagesContainer">
+        <img src="${getImage(response.url)}" class="image"/>
+      </div>
         <p><span class="colorBlue">Name:</span> ${response.name}</p>
         <p><span class="colorBlue">Birth Year:</span> ${response.birth_year}</p>
         <p><span class="colorBlue">Gender:</span> ${response.gender}</p>
@@ -35,7 +59,6 @@ function getHiddenLoader(button) {
 let currentPage = 1;
 async function getPlanets(currentPage) {
     const res = await axios.get(BASE_URL + `/planets/?page=${currentPage}`);
-    console.log(res.data.results);
     return res.data.results;
 }
 
@@ -46,12 +69,28 @@ function renderPlanets(planets) {
         let planetDivEl = document.createElement('div');
         planetDivEl.classList = 'planetsInfo';
         planetDivEl.innerHTML = `
-        <p><span class="colorBlue">Name:</span> ${response.name}</p>
+        <p><span class="colorBlue">Name:</span> ${response.name.toUpperCase()}</p>
+        <p><span class="colorBlue">Rotation Period:</span> ${response.rotation_period}</p>
+        <p><span class="colorBlue">Orbital Period:</span> ${response.orbital_period}</p>
+        <p><span class="colorBlue">Diameter:</span> ${response.diameter}</p>
+        <p><span class="colorBlue">Diameter:</span> ${response.diameter}</p>
+        <p><span class="colorBlue">Climate:</span> ${response.climate}</p>
+        <p><span class="colorBlue">Population:</span> ${response.population}</p>
         `;
         container.append(planetDivEl);
     })
     
 }
+
+function getImage(url){
+    if (images[url] == undefined) {
+      return './img/starwarsicon.png';
+    } else {
+      return images[url];
+    }
+  }
+
+
 
 // Buttons listeners
 const homeButton = document.querySelector('.logoButton').addEventListener('click', () => {
@@ -62,54 +101,12 @@ const homeButton = document.querySelector('.logoButton').addEventListener('click
 })
 const getInfoButton = document.getElementById('getInfo').addEventListener('click', () => {
     document.querySelector('.container').classList.remove('hidden');
-    document.getElementById('filmsButtons').classList.remove('hidden');
     document.querySelector('.planetsBtn').classList.remove('hidden');
     document.querySelector('.getInfoButton').classList.add('hidden');
-    document.getElementById('wrapper').classList.add('hidden');
-
-    
+    document.getElementById('getData').classList.remove('hidden');
+    document.getElementById('wrapper').classList.add('hidden'); 
 });
 const loader = document.getElementById('loader');
-const filmI = document.getElementById('filmI').addEventListener('click', () => getCharacterFromAPI(1).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    document.getElementById('wrapper').classList.remove('hidden');
-    prev.classList.add('hidden');
-    next.classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmII = document.getElementById('filmII').addEventListener('click', () => getCharacterFromAPI(2).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    document.getElementById('wrapper').classList.remove('hidden');
-    prev.classList.add('hidden');
-    next.classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmIII = document.getElementById('filmIII').addEventListener('click', () => getCharacterFromAPI(3).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    document.getElementById('wrapper').classList.remove('hidden');
-    prev.classList.add('hidden');
-    next.classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmIV = document.getElementById('filmIV').addEventListener('click', () => getCharacterFromAPI(4).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    document.getElementById('wrapper').classList.remove('hidden');
-    prev.classList.add('hidden');
-    next.classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmV = document.getElementById('filmV').addEventListener('click', () => getCharacterFromAPI(5).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    document.getElementById('wrapper').classList.remove('hidden');
-    prev.classList.add('hidden');
-    next.classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
 const planet = document.getElementById('planet').addEventListener('click', function() {
     document.getElementById('wrapper').classList.remove('hidden');
     loader.classList.add('active');
@@ -121,39 +118,76 @@ const planet = document.getElementById('planet').addEventListener('click', funct
 });
 
 const prev = document.getElementById('prev');
-const next = document.getElementById('next');
 prev.addEventListener('click', function() {
     loader.classList.add('active');
+    if (currentPage === 2) {
+        prev.style.cursor = "not-allowed";
+    }
     if (currentPage != 1) {
         currentPage--;
         getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
     }
 });
 
+const next = document.getElementById('next');
 next.addEventListener('click', function() {
     loader.classList.add('active');
+    if (currentPage === 5) {
+        next.style.cursor = "not-allowed";
+    }
 if (currentPage != 6) {
     currentPage++;
     getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
 }
 });
 
+const getData = document.querySelector('.getDataButton').addEventListener('click', () => getCharacterFromAPI(filmId).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
 
 
-
-//     'https://swapi.co/api/people/1/': './img/luke.webp',
-//     'https://swapi.co/api/people/2/': './img/C-3PO.webp',
-//     'https://swapi.co/api/people/3/': './img/R2-D2.webp',
-//     'https://swapi.co/api/people/4/': './img/Darth-Vader.webp',
-//     'https://swapi.co/api/people/5/': './img/Leia-Organa.webp',
-//     'https://swapi.co/api/people/10/': './img/Obi-Wan-Kenobi.webp',
-//     'https://swapi.co/api/people/13/': './img/Chewbacca.webp',
-//     'https://swapi.co/api/people/14/': './img/Han-Solo.webp',
-//     'https://swapi.co/api/people/16/': './img/Jabba.webp',
-//     'https://swapi.co/api/people/18/': './img/Wedge-Antilles.webp',
-//     'https://swapi.co/api/people/20/': './img/Yoda.webp',
-//     'https://swapi.co/api/people/21/': './img/Palpatine.webp',
-//     'https://swapi.co/api/people/22/': './img/Boba-Fett.webp',
-    //     'https://swapi.co/api/people/23/': './img/IG-88.webp',
-    //     'https://swapi.co/api/people/24/': './img/Bossk.webp',
-    // }
+// const filmI = document.getElementById('filmI').addEventListener('click', () => getCharacterFromAPI(1).then(renderCharacters).finally(() => {
+//     document.getElementById('planets').classList.add('hidden');
+//     document.getElementById('wrapper').classList.remove('hidden');
+//     prev.classList.add('hidden');
+//     next.classList.add('hidden');
+//     getHiddenLoader();
+//     getActiveCharacters();
+// }));
+// const filmII = document.getElementById('filmII').addEventListener('click', () => getCharacterFromAPI(2).then(renderCharacters).finally(() => {
+//     document.getElementById('planets').classList.add('hidden');
+//     document.getElementById('wrapper').classList.remove('hidden');
+//     prev.classList.add('hidden');
+//     next.classList.add('hidden');
+//     getHiddenLoader();
+//     getActiveCharacters();
+// }));
+// const filmIII = document.getElementById('filmIII').addEventListener('click', () => getCharacterFromAPI(3).then(renderCharacters).finally(() => {
+//     document.getElementById('planets').classList.add('hidden');
+//     document.getElementById('wrapper').classList.remove('hidden');
+//     prev.classList.add('hidden');
+//     next.classList.add('hidden');
+//     getHiddenLoader();
+//     getActiveCharacters();
+// }));
+// const filmIV = document.getElementById('filmIV').addEventListener('click', () => getCharacterFromAPI(4).then(renderCharacters).finally(() => {
+//     document.getElementById('planets').classList.add('hidden');
+//     document.getElementById('wrapper').classList.remove('hidden');
+//     prev.classList.add('hidden');
+//     next.classList.add('hidden');
+//     getHiddenLoader();
+//     getActiveCharacters();
+// }));
+// const filmV = document.getElementById('filmV').addEventListener('click', () => getCharacterFromAPI(5).then(renderCharacters).finally(() => {
+//     document.getElementById('planets').classList.add('hidden');
+//     document.getElementById('wrapper').classList.remove('hidden');
+//     prev.classList.add('hidden');
+//     next.classList.add('hidden');
+//     getHiddenLoader();
+//     getActiveCharacters();
+// }));

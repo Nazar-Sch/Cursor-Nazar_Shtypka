@@ -37,33 +37,38 @@ body {
 }
 .buttons {
     display: flex;
+    flex-direction: column;
    justify-content: center;
-   margin-top: 25px;
-   margin-bottom: 25px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   margin-left: 25px;
 }
 
 .films {
     display: flex;
-    flex-direction: row;
-    /* align-items: baseline; */
+    flex-direction: column;
+    align-items: baseline;
 }
 .btn {
     background-color: transparent;
     border: 0;
     color: #ff6;
-    font-size: 42px;
+    font-size: 16px;
     cursor: pointer;
     font-family: 'News Cycle', sans-serif;
     letter-spacing:.15em;
 }
 .btn-getPlanet {
     color: rgb(75, 213, 238);
-    margin-left: 25px;
+    margin-top: 10px;
+    font-size: 24px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 24px;
+    border: 1px solid rgb(75, 213, 238, 0.1);
+    border-radius: 15px;
 }
 
-.btn-getInfo {
-    width: 100px;
-}
 .characters {
     display: flex;
     flex-wrap: wrap;
@@ -71,9 +76,7 @@ body {
 
 }
 .charList {
-    border: 1px solid rgb(75, 213, 238, 0.5);
-    width: 250px;
-    height: 200px;
+    border: 1px solid rgb(75, 213, 238, 0.1);
     padding-right: 15px;
     padding-left: 15px;
     margin-left: 15px;
@@ -86,12 +89,14 @@ body {
 }
 .planetsInfo {
     max-width: 250px;
-    max-height: 200px;
+    max-height: 400px;
     height: 100%;
     width: 100%;
-    border: 1px solid rgb(75, 213, 238, 0.5);
+    border: 1px solid rgb(75, 213, 238, 0.1);
     margin-left: 15px;
     margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .colorBlue {
@@ -101,21 +106,35 @@ body {
     display: flex;
 }
 .btn-planets {
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     color: #ff6;
     border: 0px solid rgb(75, 213, 238);  
 }
 
-.btnPlanets {
-    display: flex;
-}
 .next {
-    margin-left: 15px;
+    background-image: url(./img/next.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
     cursor: pointer;
+    outline: none;
+    top: 50vh;
+    right: 25px;
 }
 .prev {
+    background-image: url(./img/left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    left: 25px;
+    position: fixed;
     margin-right: 15px;
     cursor: pointer;
+    top: 50vh;
+    outline: none;
 }
 
 .hidden {
@@ -132,5 +151,34 @@ body {
 display: flex;
 justify-content: center;
 margin-bottom: 15px;
+font-size: 24px;
 }
 
+.imagesContainer img {
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 200px;
+    padding-top: 10px;
+}
+
+.imagesContainer {
+    height: 195px;
+    overflow: hidden;
+}
+
+.getFilmId {
+    background-color: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 24px;
+    color: #ff6;
+    border: 1px solid rgb(75, 213, 238, 0.1);
+    border-radius: 15px;
+}
+
+.getDataButton {
+    cursor: pointer;
+}
