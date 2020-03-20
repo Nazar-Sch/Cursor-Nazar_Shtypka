@@ -13,30 +13,33 @@
     <div class="logo">
         <button class="logoButton"></button>
     </div>
-
-    <div class="buttons">
-        <div class="films">
-            <button class="btn btn-getInfo filterI" id="filmI">I</button>
-            <button class="btn btn-getInfo filterII" id="filmII">II</button>
-            <button class="btn btn-getInfo filterIII" id="filmIII">III</button>
-            <button class="btn btn-getInfo filterIV" id="filmIV">IV</button>
-            <button class="btn btn-getInfo filterV" id="filmV">V</button>
-        </div>
-        <div class="planetsBtn">
-            <button class="btn btn-getPlanet" id="planet">Planets</button>
-            <div class="btnPlanets">
-                <button class="btn-planets prev" id="prev">Prev</button>
-                <button class="btn-planets next" id="next">Next</button>
+    <div class="getInfo">
+        <button class="getInfoButton" id="getInfo">Get Info</button>
+    </div>
+    <div class="container">
+        <div class="buttons">
+            <div class="films hidden" id="filmsButtons">
+                <button class="btn btn-getInfo filterI" id="filmI">I</button>
+                <button class="btn btn-getInfo filterII" id="filmII">II</button>
+                <button class="btn btn-getInfo filterIII" id="filmIII">III</button>
+                <button class="btn btn-getInfo filterIV" id="filmIV">IV</button>
+                <button class="btn btn-getInfo filterV" id="filmV">V</button>
+            </div>
+            <div class="planetsBtn hidden" id="planetsBtn">
+                <button class="btn btn-getPlanet" id="planet">Planets</button>
+                <div class="btnPlanets">
+                    <button class="btn-planets prev hidden" id="prev">Prev</button>
+                    <button class="btn-planets next hidden" id="next">Next</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="wrapper">
         <div class="loaderText">
             <div class="hidden" id="loader">Loading...</div>
         </div>
-
-        <div class="characters hidden" id="characters"></div>
-        <div class="planets" id="planets"></div>
+        <div id="wrapper">
+            <div class="characters hidden" id="characters"></div>
+            <div class="planets" id="planets"></div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>

@@ -1,8 +1,7 @@
 body {
     background-image: url(./img/starwars-bg.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    /* background-color: black; */
     font-family: 'News Cycle', sans-serif;
     color: #ff6;
     font-size: 16px;
@@ -23,12 +22,26 @@ body {
     outline: none;
     cursor: pointer;
 }
+.getInfo {
+    display: flex;
+    justify-content: center;
+}
+.getInfoButton {
+    position: absolute;
+    margin-top: 250px;
+    color: #ff6;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 2em;
+}
 .buttons {
     display: flex;
    justify-content: center;
    margin-top: 25px;
    margin-bottom: 25px;
 }
+
 .films {
     display: flex;
     flex-direction: row;

@@ -1,48 +1,6 @@
 const BASE_URL = 'https://swapi.co/api';
-// const images = {
-//     'https://swapi.co/api/people/1/': './img/luke.webp',
-//     'https://swapi.co/api/people/2/': './img/C-3PO.webp',
-//     'https://swapi.co/api/people/3/': './img/R2-D2.webp',
-//     'https://swapi.co/api/people/4/': './img/Darth-Vader.webp',
-//     'https://swapi.co/api/people/5/': './img/Leia-Organa.webp',
-//     'https://swapi.co/api/people/10/': './img/Obi-Wan-Kenobi.webp',
-//     'https://swapi.co/api/people/13/': './img/Chewbacca.webp',
-//     'https://swapi.co/api/people/14/': './img/Han-Solo.webp',
-//     'https://swapi.co/api/people/16/': './img/Jabba.webp',
-//     'https://swapi.co/api/people/18/': './img/Wedge-Antilles.webp',
-//     'https://swapi.co/api/people/20/': './img/Yoda.webp',
-//     'https://swapi.co/api/people/21/': './img/Palpatine.webp',
-//     'https://swapi.co/api/people/22/': './img/Boba-Fett.webp',
-//     'https://swapi.co/api/people/23/': './img/IG-88.webp',
-//     'https://swapi.co/api/people/24/': './img/Bossk.webp',
-// }
-const loader = document.getElementById('loader');
-const filmI = document.getElementById('filmI').addEventListener('click', () => getCharacterFromAPI(1).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmII = document.getElementById('filmII').addEventListener('click', () => getCharacterFromAPI(2).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmIII = document.getElementById('filmIII').addEventListener('click', () => getCharacterFromAPI(3).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmIV = document.getElementById('filmIV').addEventListener('click', () => getCharacterFromAPI(4).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
-const filmV = document.getElementById('filmV').addEventListener('click', () => getCharacterFromAPI(5).then(renderCharacters).finally(() => {
-    document.getElementById('planets').classList.add('hidden');
-    getHiddenLoader();
-    getActiveCharacters();
-}));
 
+// Functions
 async function getCharacterFromAPI(film) {
     loader.classList.add('active');
     const res = await axios.get(BASE_URL + `/films/${film}/`);
@@ -74,8 +32,6 @@ function getHiddenLoader(button) {
     loader.classList.remove('active');
 }
 
-
-// PLANET
 let currentPage = 1;
 async function getPlanets(currentPage) {
     const res = await axios.get(BASE_URL + `/planets/?page=${currentPage}`);
@@ -97,14 +53,72 @@ function renderPlanets(planets) {
     
 }
 
+// Buttons listeners
+const homeButton = document.querySelector('.logoButton').addEventListener('click', () => {
+    document.querySelector('.container').classList.add('hidden');
+    document.querySelector('.getInfoButton').classList.remove('hidden');
+
+
+})
+const getInfoButton = document.getElementById('getInfo').addEventListener('click', () => {
+    document.querySelector('.container').classList.remove('hidden');
+    document.getElementById('filmsButtons').classList.remove('hidden');
+    document.querySelector('.planetsBtn').classList.remove('hidden');
+    document.querySelector('.getInfoButton').classList.add('hidden');
+    document.getElementById('wrapper').classList.add('hidden');
+
+    
+});
+const loader = document.getElementById('loader');
+const filmI = document.getElementById('filmI').addEventListener('click', () => getCharacterFromAPI(1).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
+const filmII = document.getElementById('filmII').addEventListener('click', () => getCharacterFromAPI(2).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
+const filmIII = document.getElementById('filmIII').addEventListener('click', () => getCharacterFromAPI(3).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
+const filmIV = document.getElementById('filmIV').addEventListener('click', () => getCharacterFromAPI(4).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
+const filmV = document.getElementById('filmV').addEventListener('click', () => getCharacterFromAPI(5).then(renderCharacters).finally(() => {
+    document.getElementById('planets').classList.add('hidden');
+    document.getElementById('wrapper').classList.remove('hidden');
+    prev.classList.add('hidden');
+    next.classList.add('hidden');
+    getHiddenLoader();
+    getActiveCharacters();
+}));
 const planet = document.getElementById('planet').addEventListener('click', function() {
+    document.getElementById('wrapper').classList.remove('hidden');
     loader.classList.add('active');
     document.querySelector('.characters').classList.add('hidden');
     document.getElementById('planets').classList.remove('hidden');
+    prev.classList.remove('hidden');
+    next.classList.remove('hidden');
     return getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
 });
-
-
 
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
@@ -123,3 +137,23 @@ if (currentPage != 6) {
     getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
 }
 });
+
+
+
+
+//     'https://swapi.co/api/people/1/': './img/luke.webp',
+//     'https://swapi.co/api/people/2/': './img/C-3PO.webp',
+//     'https://swapi.co/api/people/3/': './img/R2-D2.webp',
+//     'https://swapi.co/api/people/4/': './img/Darth-Vader.webp',
+//     'https://swapi.co/api/people/5/': './img/Leia-Organa.webp',
+//     'https://swapi.co/api/people/10/': './img/Obi-Wan-Kenobi.webp',
+//     'https://swapi.co/api/people/13/': './img/Chewbacca.webp',
+//     'https://swapi.co/api/people/14/': './img/Han-Solo.webp',
+//     'https://swapi.co/api/people/16/': './img/Jabba.webp',
+//     'https://swapi.co/api/people/18/': './img/Wedge-Antilles.webp',
+//     'https://swapi.co/api/people/20/': './img/Yoda.webp',
+//     'https://swapi.co/api/people/21/': './img/Palpatine.webp',
+//     'https://swapi.co/api/people/22/': './img/Boba-Fett.webp',
+    //     'https://swapi.co/api/people/23/': './img/IG-88.webp',
+    //     'https://swapi.co/api/people/24/': './img/Bossk.webp',
+    // }
