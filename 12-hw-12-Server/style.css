@@ -29,11 +29,12 @@ body {
 .getInfoButton {
     position: absolute;
     margin-top: 250px;
-    color: #ff6;
+    color: rgb(75, 213, 238); 
     background-color: transparent;
     border: 0;
     cursor: pointer;
     font-size: 2em;
+
 }
 .buttons {
     display: flex;
