@@ -18,7 +18,7 @@ const images = {
     'https://swapi.co/api/people/16/': './img/Jabba.webp',
     'https://swapi.co/api/people/17/': './img/Porkins.webp',
     'https://swapi.co/api/people/18/': './img/Raymus.webp',
-}
+};
 
 // Functions
 async function getCharacterFromAPI(filmId) {
@@ -29,7 +29,7 @@ async function getCharacterFromAPI(filmId) {
         const response = await axios.get(el).then((char) => char.data);
         return response;
     }));
-}
+};
 
 function renderCharacters(response) {
     let container = document.querySelector('.characters');
@@ -47,20 +47,20 @@ function renderCharacters(response) {
         `;
         container.append(charactersInfo);
     })
-}
+};
 function getActiveCharacters() {
     document.getElementById('characters').classList.remove('hidden');
-}
+};
 
 function getHiddenLoader(button) {
     loader.classList.remove('active');
-}
+};
 
 let currentPage = 1;
 async function getPlanets(currentPage) {
     const res = await axios.get(BASE_URL + `/planets/?page=${currentPage}`);
     return res.data.results;
-}
+};
 
 function renderPlanets(planets) {
     let container = document.querySelector('.planets');
@@ -80,7 +80,7 @@ function renderPlanets(planets) {
         container.append(planetDivEl);
     })
     
-}
+};
 
 function getImage(url){
     if (images[url] == undefined) {
@@ -88,7 +88,7 @@ function getImage(url){
     } else {
       return images[url];
     }
-  }
+};
 
 
 
@@ -98,7 +98,7 @@ const homeButton = document.querySelector('.logoButton').addEventListener('click
     document.querySelector('.getInfoButton').classList.remove('hidden');
 
 
-})
+});
 const getInfoButton = document.getElementById('getInfo').addEventListener('click', () => {
     document.querySelector('.container').classList.remove('hidden');
     document.querySelector('.planetsBtn').classList.remove('hidden');
