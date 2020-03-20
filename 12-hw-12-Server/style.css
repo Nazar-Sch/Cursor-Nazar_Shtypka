@@ -12,14 +12,22 @@ body {
     justify-content: center;
     margin-top: 25px;
 }
-.logo-img {
+.logoButton {
     width: 280px;
     height: 140px;
+    background-image: url('./img/starwarsLogo.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
 }
 .buttons {
     display: flex;
    justify-content: center;
    margin-top: 25px;
+   margin-bottom: 25px;
 }
 .films {
     display: flex;
@@ -34,17 +42,19 @@ body {
     cursor: pointer;
     font-family: 'News Cycle', sans-serif;
     letter-spacing:.15em;
-    width: 100px;
 }
 .btn-getPlanet {
     color: rgb(75, 213, 238);
     margin-left: 25px;
 }
+
+.btn-getInfo {
+    width: 100px;
+}
 .characters {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    filter: drop-shadow(0 0 1px #fff);
 
 }
 .charList {
@@ -56,3 +66,58 @@ body {
     margin-left: 15px;
     margin-bottom: 15px;
 }
+.planets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.planetsInfo {
+    max-width: 250px;
+    max-height: 200px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(75, 213, 238, 0.5);
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.colorBlue {
+    color: rgb(75, 213, 238);
+}
+.planetsBtn {
+    display: flex;
+}
+.btn-planets {
+    background-color: transparent;
+    color: #ff6;
+    border: 0px solid rgb(75, 213, 238);  
+}
+
+.btnPlanets {
+    display: flex;
+}
+.next {
+    margin-left: 15px;
+    cursor: pointer;
+}
+.prev {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.active {
+    visibility: visible;
+    display: block;
+}
+
+.loaderText {
+display: flex;
+justify-content: center;
+margin-bottom: 15px;
+}
+

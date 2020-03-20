@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class="logo">
-        <img src="./img/starwarsLogo.webp" alt="Logo StarWars" class="logo-img">
+        <button class="logoButton"></button>
     </div>
-    
+
     <div class="buttons">
         <div class="films">
             <button class="btn btn-getInfo filterI" id="filmI">I</button>
@@ -22,9 +22,21 @@
             <button class="btn btn-getInfo filterIV" id="filmIV">IV</button>
             <button class="btn btn-getInfo filterV" id="filmV">V</button>
         </div>
-        <button class="btn btn-getPlanet hidden">Planets</button>
+        <div class="planetsBtn">
+            <button class="btn btn-getPlanet" id="planet">Planets</button>
+            <div class="btnPlanets">
+                <button class="btn-planets prev" id="prev">Prev</button>
+                <button class="btn-planets next" id="next">Next</button>
+            </div>
+        </div>
     </div>
-    <div class="characters">
+    <div id="wrapper">
+        <div class="loaderText">
+            <div class="hidden" id="loader">Loading...</div>
+        </div>
+
+        <div class="characters hidden" id="characters"></div>
+        <div class="planets" id="planets"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
