@@ -1,7 +1,7 @@
 const BASE_URL = 'https://swapi.co/api';
 const images = {
     'https://swapi.co/api/people/1/': './img/luke.webp',
-    'https://swapi.co/api/people/2/': './img/C-3PO.webp',
+    'https://swapi.co/api/people/2/': './img/c-3po.webp',
     'https://swapi.co/api/people/3/': './img/R2-D2.webp',
     'https://swapi.co/api/people/4/': './img/dartvader.webp',
     'https://swapi.co/api/people/5/': './img/Leia-Organa.webp',
