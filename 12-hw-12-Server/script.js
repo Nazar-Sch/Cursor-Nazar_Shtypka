@@ -105,6 +105,9 @@ const getInfoButton = document.getElementById('getInfo').addEventListener('click
     document.querySelector('.getInfoButton').classList.add('hidden');
     document.getElementById('getData').classList.remove('hidden');
     document.getElementById('wrapper').classList.add('hidden'); 
+    document.getElementById('next').classList.add('hidden'); 
+    document.getElementById('prev').classList.add('hidden'); 
+
 });
 const loader = document.getElementById('loader');
 const planet = document.getElementById('planet').addEventListener('click', function() {
