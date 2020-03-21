@@ -1,5 +1,5 @@
 body {
-    background-image: url(./img/starwars-bg.jpg);
+    background-image: url(./img/bkcim.webp);
     background-size: contain;
     background-position: center;
     font-family: 'News Cycle', sans-serif;
@@ -148,12 +148,15 @@ body {
     visibility: visible;
     display: block;
 }
-
+#loader {
+    position: absolute;
+}
 .loaderText {
 display: flex;
 justify-content: center;
 margin-bottom: 15px;
 font-size: 24px;
+height: 40px;
 }
 
 .imagesContainer img {

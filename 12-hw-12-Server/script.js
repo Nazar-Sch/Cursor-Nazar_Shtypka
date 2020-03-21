@@ -59,6 +59,16 @@ function getHiddenLoader(button) {
 let currentPage = 1;
 async function getPlanets(currentPage) {
     const res = await axios.get(BASE_URL + `/planets/?page=${currentPage}`);
+    if (currentPage < 2) {
+        prev.style.display = "none";
+    } else {
+        prev.style.display = "block";
+    }
+    if (currentPage > 5) {
+        next.style.display = "none";
+    } else {
+        next.style.display = "block";
+    }
     return res.data.results;
 };
 
@@ -123,9 +133,6 @@ const planet = document.getElementById('planet').addEventListener('click', funct
 const prev = document.getElementById('prev');
 prev.addEventListener('click', function() {
     loader.classList.add('active');
-    if (currentPage === 2) {
-        prev.style.cursor = "not-allowed";
-    }
     if (currentPage != 1) {
         currentPage--;
         getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
@@ -135,9 +142,6 @@ prev.addEventListener('click', function() {
 const next = document.getElementById('next');
 next.addEventListener('click', function() {
     loader.classList.add('active');
-    if (currentPage === 5) {
-        next.style.cursor = "not-allowed";
-    }
 if (currentPage != 6) {
     currentPage++;
     getPlanets(currentPage).then(renderPlanets).finally(getHiddenLoader);
