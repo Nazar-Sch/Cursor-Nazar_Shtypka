@@ -6,6 +6,10 @@ body {
     color: #ff6;
     font-size: 16px;
 }
+
+button {
+    outline: none;
+}
 .logo{
     display: flex;
     justify-content: center;
