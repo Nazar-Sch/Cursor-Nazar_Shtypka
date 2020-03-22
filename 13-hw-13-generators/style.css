@@ -1,0 +1,179 @@
+body {
+    background-color: #323233;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+} 
+button {
+    outline: none;
+    cursor: pointer;
+}
+.laptop {
+    position: relative;
+    height: 600px;
+    width: 1000px;
+    margin: auto;
+}
+.monitor {
+    background-color: #E0E2E2;
+    border-radius: 20px;
+    width: 800px;
+    height: 500px;
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
+    
+}
+.screen {
+    background-color: black;
+    border-radius: 15px;
+    width: 795px;
+    height: 495px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+
+
+}
+
+.display {
+    width: 755px;
+    height: 455px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #ABADC6;
+}
+.browser {
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    border-radius: 7px;
+
+}
+.browser::before {
+    content: " ";
+    width: 600px;
+    height: 15px;
+    background-color: #AFA895;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    border-radius: 7px 7px 0px 0px;
+}
+.round {
+    width: 18px;
+    height: 4px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 15px;
+    top: 5px
+}
+.rounds {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    margin-right: 2px;
+    z-index: 3;
+}
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.idGen {
+    position: absolute;
+    right: 0;
+    background-color: #E0E2E2;
+    width: 150px;
+    height: 100%;
+    border-radius: 0 10px 0 0;
+}
+.idGenerator {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    width: 90px;
+    background-color: #FBB053;
+    border: 0;
+    height: 30px;
+    border-radius: 10px;
+    width: 100px;
+    -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.outputId {
+    font-family: 'Sedgwick Ave', cursive;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    font-size: 35px;
+}
+
+.buttonsText {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+.buttonGen {
+    width: 100px;
+    height: 35px;
+    bottom: 0;
+    background-color: #fff;
+    border: 0;
+    font-size: 50px;
+}
+.text {
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.keys {
+    width: 900px;
+    height: 30px;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #E0E2E2;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    -webkit-box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.bottomLine {
+    width: 100%;
+    height: 15px;
+    background-color: #5C5D6B;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.time {
+    font-size: 11px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+}
+.window {
+    margin-left: 2px;
+    margin-top: 1px;
+    display: grid;
+    grid-template-columns: 6px 6px;
+    grid-template-rows: 6px 6px;
+    
+}
+.square {
+    background-color: black;
+    width: 5px;
+    height: 5px;
+    margin-left: 1px;
+    margin-top: 1px;
+}
