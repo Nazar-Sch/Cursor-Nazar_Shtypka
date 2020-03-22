@@ -2,6 +2,7 @@ body {
     background-color: #323233;
     box-sizing: border-box;
     font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
 } 
 button {
     outline: none;
@@ -132,6 +133,7 @@ box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
 .text {
     margin-top: 25px;
     margin-left: 15px;
+    overflow: hidden;
 }
 .keys {
     width: 900px;

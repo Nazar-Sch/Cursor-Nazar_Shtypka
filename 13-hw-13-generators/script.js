@@ -19,7 +19,6 @@ function* newFontGenerator(size) {
       document.querySelector('.text').style.fontSize = size + "px";
     }
   }
-
 }
 
 const fontGenerator = newFontGenerator(14); 
