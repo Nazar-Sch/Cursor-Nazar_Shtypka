@@ -108,6 +108,12 @@ button {
 -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
 box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
 }
+.idGenerator:active {
+    background-color: #DE9B49;
+    -webkit-box-shadow: -3px 3px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 3px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: -3px 3px 4px 0px rgba(0,0,0,0.75);
+}
 
 .outputId {
     font-family: 'Sedgwick Ave', cursive;
@@ -124,12 +130,17 @@ box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 .buttonGen {
     width: 100px;
-    height: 35px;
+    height: 50px;
     bottom: 0;
     background-color: #fff;
     border: 0;
     font-size: 50px;
+    color: #007ACC;
 }
+.buttonGen:active {
+color: rgba(0,0,0,0.85)
+}
+
 .text {
     margin-top: 25px;
     margin-left: 15px;
@@ -178,4 +189,7 @@ box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
     height: 5px;
     margin-left: 1px;
     margin-top: 1px;
+}
+.window {
+    cursor: pointer;
 }
