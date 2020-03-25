@@ -21,89 +21,100 @@ const wrapper = document.getElementById('wrapper');
 function clearContent() { 
     return wrapper.innerHTML = ""; 
 } 
-function clearDom() { 
-    return document.getElementById('dom').style.display = "none";
-} 
-function addDom() { 
-    return document.getElementById('dom').style.display = "flex";
-} 
-
 
 document.querySelector('.btn-hw1').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#1 - ${maxPrice}`);
     return wrapper.innerHTML = `HW#1 - ${maxPrice}`;
 });
 document.querySelector('.btn-hw2').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     return wrapper.innerHTML = `HW#2 - ${renderNum()}`;
 });
 document.querySelector('.btn-hw3').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#3 - ${(deleteLetters())}`);
     return wrapper.innerHTML = `HW#3 - ${(deleteLetters())}`;
 });
 document.querySelector('.btn-hw4').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#4 - ${(getListOfStudents())}`);
     return wrapper.innerHTML = `HW#4 - ${(getListOfStudents())}`;
 
 });
 document.querySelector('.btn-hw5').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#5 - ${(getAverage())}`);
     return wrapper.innerHTML = `HW#5 - ${(getAverage())}`;
 
 });
 document.querySelector('.btn-hw6').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#6 - ${(getSubject(students[0]))}`);
     return wrapper.innerHTML = `HW#6 - ${(getSubject(students[0]))}`;
 
 });
 document.querySelector('.btn-hw7').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#7 - My tax in Ukraine is ${getMyTax.call(ukraine, 10000)}`);
     return wrapper.innerHTML = `HW#7 - My tax in Ukraine is ${getMyTax.call(ukraine, 10000)}`;
 });
 document.querySelector('.btn-hw8').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     console.log(`HW#8 - Student's info: ${student.getInfo()}`);
     return wrapper.innerHTML = `HW#8 - Student's info: ${student.getInfo()}`;
 });
 document.querySelector('.btn-hw9').addEventListener('click', () => {
-    addDom();
+    document.getElementById('dom').style.display = "flex";
     clearContent();
+    document.querySelector('.container').style.display = "none";
+    console.log(`HW#9 Result - Blocks are genereting!`);
     return generateBlocksInterval();
 });
 document.querySelector('.btn-hw10').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
-    wrapper.innerHTML = `HW#10 - Sound is playing`;
+    document.querySelector('.container').style.display = "none";
+    console.log(`HW#10 - Sound is playing`);
+    wrapper.innerHTML = `HW#10 - Result: Sound is playing`;
     return play();
 });
 document.querySelector('.btn-hw11').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
-    console.log(`HW#11 - Chinese letters: ${getRandomChinese()}`);
-    return wrapper.innerHTML = `HW#11 - Random Chinese letter: ${getRandomChinese()}`;
+    document.querySelector('.container').style.display = "none";
+    return getRandomChinese(2).then(letters => {
+        console.log(`HW11 Result - Chenese letters: ${letters}`);
+        wrapper.innerHTML = `HW11 Result - Chenese letters: ${letters}`;
+    });
 });
 document.querySelector('.btn-hw12').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
-    return wrapper.innerHTML = `HW#12 - Starwars characters: ${getCharacter(7)}`;
+    document.querySelector('.container').style.display = "flex";
+    console.log(`HW12 Result - Cherecters rendered`);
+    return getCharacter(2).then(res => res);
 });
 document.querySelector('.btn-hw13').addEventListener('click', () => {
-    clearDom();
+    document.getElementById('dom').style.display = "none";
     clearContent();
+    document.querySelector('.container').style.display = "none";
     return wrapper.innerHTML = `HW#13 - Value: ${idGenerator.next().value}`;
 });
 
