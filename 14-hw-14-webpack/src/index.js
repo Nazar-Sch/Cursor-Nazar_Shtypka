@@ -90,18 +90,17 @@ document.querySelector('.btn-hw10').addEventListener('click', () => {
     wrapper.innerHTML = `HW#10 - Sound is playing`;
     return play();
 });
-// document.querySelector('.btn-hw11').addEventListener('click', () => {
-//     clearDom();
-//     clearContent();
-//     console.log(`HW#11 - Chinese letters: ${getRandomChinese(7)}`);
-//     return wrapper.innerHTML = `HW#11 - Random Chinese letter: ${getRandomChinese(7)}`;
-// });
-// document.querySelector('.btn-hw12').addEventListener('click', () => {
-//     clearDom();
-//     clearContent();
-//     console.log(`HW#12 - Chinese letters: ${getCharacter()}`);
-//     return wrapper.innerHTML = `HW#11 - Starwars characters: ${getCharacter()}`;
-// });
+document.querySelector('.btn-hw11').addEventListener('click', () => {
+    clearDom();
+    clearContent();
+    console.log(`HW#11 - Chinese letters: ${getRandomChinese()}`);
+    return wrapper.innerHTML = `HW#11 - Random Chinese letter: ${getRandomChinese()}`;
+});
+document.querySelector('.btn-hw12').addEventListener('click', () => {
+    clearDom();
+    clearContent();
+    return wrapper.innerHTML = `HW#12 - Starwars characters: ${getCharacter(7)}`;
+});
 document.querySelector('.btn-hw13').addEventListener('click', () => {
     clearDom();
     clearContent();

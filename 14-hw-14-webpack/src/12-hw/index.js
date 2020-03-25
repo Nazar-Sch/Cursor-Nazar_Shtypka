@@ -44,6 +44,7 @@ export default async function getCharacter() {
             container.append(charactersInfo);
         }
     )})
+    
 };
 
 // arr.forEach(el => {
