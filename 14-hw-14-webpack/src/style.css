@@ -1,0 +1,29 @@
+body {
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    flex-wrap: wrap;
+}
+.btn {
+    font-family: 'Baloo Chettan 2', cursive;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(253, 198, 18);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.btn:hover,
+.btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em;
+  transform: translateY(-0.6em);
+}

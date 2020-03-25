@@ -23,10 +23,10 @@ function generateBlocks() {
     return createBlocks();
 }
 
-function generateBlocksInterval() {
+export function generateBlocksInterval() {
     return setInterval(() => {
         generateBlocks();
-    }, 1000); 
+    }, 500); 
 }
 
 generateBlocks();
