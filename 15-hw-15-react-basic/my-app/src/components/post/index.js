@@ -6,13 +6,11 @@ function post(props){
                 <div className="user">
                 <div className='userInfo'>
                     <div className='photoUser'>
-                        <img src={props.photo} className="photoUser__item"/>
+                        <img src={props.photo} alt="Users avatar" className="photoUser__item"/>
                     </div>
                     <div className='userDate'>
                         <div className="userName">
-                        <span>
-                            {props.name}
-                        </span>
+                        <span>{props.name}</span>
                         <i className="fas fa-check-circle"></i>
                         <div className="userNick"> 
                         <span>{props.nickname}</span>·<span className='datePost'>{props.date}</span>
@@ -27,7 +25,7 @@ function post(props){
                     </div>
                 
                 <div className='imagePost'>
-                    <img src={props.image} className="imagePost__item"/>
+                    <img src={props.image} alt="Posts item"className="imagePost__item"/>
                 
                 <div className="imageFooter">
                     <div className="btn-postFooter comments">
