@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Nazar-Sch/Cursor-Nazar_Shtypka/precache-manifest.660f287eb5e57770d24a9da463490faa.js"
+  "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/precache-manifest.0ddc1548ab8455e18a3753f11f662f57.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/Nazar-Sch/Cursor-Nazar_Shtypka/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
