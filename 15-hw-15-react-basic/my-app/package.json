@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://github.com/Nazar-Sch/Cursor-Nazar_Shtypka",
+  "homepage": "https://github.com/Nazar-Sch/Cursor-Nazar_Shtypka/tree/gh-pages",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
