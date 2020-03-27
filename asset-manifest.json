@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/css/main.1cddaed9.chunk.css",
+    "main.js": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/main.c6d2bb31.chunk.js",
+    "main.js.map": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/main.c6d2bb31.chunk.js.map",
+    "runtime-main.js": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/runtime-main.a25ddb82.js",
+    "runtime-main.js.map": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/runtime-main.a25ddb82.js.map",
+    "static/js/2.3dd64d21.chunk.js": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js",
+    "static/js/2.3dd64d21.chunk.js.map": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js.map",
+    "index.html": "/Nazar-Sch/Cursor-Nazar_Shtypka/index.html",
+    "precache-manifest.660f287eb5e57770d24a9da463490faa.js": "/Nazar-Sch/Cursor-Nazar_Shtypka/precache-manifest.660f287eb5e57770d24a9da463490faa.js",
+    "service-worker.js": "/Nazar-Sch/Cursor-Nazar_Shtypka/service-worker.js",
+    "static/css/main.1cddaed9.chunk.css.map": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/css/main.1cddaed9.chunk.css.map",
+    "static/js/2.3dd64d21.chunk.js.LICENSE.txt": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/Nazar-Sch/Cursor-Nazar_Shtypka/static/media/down-arrow.115e282b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a25ddb82.js",
+    "static/js/2.3dd64d21.chunk.js",
+    "static/css/main.1cddaed9.chunk.css",
+    "static/js/main.c6d2bb31.chunk.js"
+  ]
+}
