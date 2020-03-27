@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/css/main.18d59e66.chunk.css",
-    "main.js": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/main.c6d2bb31.chunk.js",
-    "main.js.map": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/main.c6d2bb31.chunk.js.map",
-    "runtime-main.js": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/runtime-main.6ec0474f.js",
-    "runtime-main.js.map": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/runtime-main.6ec0474f.js.map",
-    "static/js/2.3dd64d21.chunk.js": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/2.3dd64d21.chunk.js",
-    "static/js/2.3dd64d21.chunk.js.map": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/2.3dd64d21.chunk.js.map",
-    "index.html": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/index.html",
-    "precache-manifest.0ddc1548ab8455e18a3753f11f662f57.js": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/precache-manifest.0ddc1548ab8455e18a3753f11f662f57.js",
-    "service-worker.js": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/service-worker.js",
-    "static/css/main.18d59e66.chunk.css.map": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/css/main.18d59e66.chunk.css.map",
-    "static/js/2.3dd64d21.chunk.js.LICENSE.txt": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/js/2.3dd64d21.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/Cursor-Nazar_Shtypka/15-hw-15-react-basic/my-app/static/media/down-arrow.115e282b.svg"
+    "main.css": "/Cursor-Nazar_Shtypka/static/css/main.5b351cf4.chunk.css",
+    "main.js": "/Cursor-Nazar_Shtypka/static/js/main.c6d2bb31.chunk.js",
+    "main.js.map": "/Cursor-Nazar_Shtypka/static/js/main.c6d2bb31.chunk.js.map",
+    "runtime-main.js": "/Cursor-Nazar_Shtypka/static/js/runtime-main.385d0380.js",
+    "runtime-main.js.map": "/Cursor-Nazar_Shtypka/static/js/runtime-main.385d0380.js.map",
+    "static/js/2.3dd64d21.chunk.js": "/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js",
+    "static/js/2.3dd64d21.chunk.js.map": "/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js.map",
+    "index.html": "/Cursor-Nazar_Shtypka/index.html",
+    "precache-manifest.ccea60dba7ac31c7d747297d31f538df.js": "/Cursor-Nazar_Shtypka/precache-manifest.ccea60dba7ac31c7d747297d31f538df.js",
+    "service-worker.js": "/Cursor-Nazar_Shtypka/service-worker.js",
+    "static/css/main.5b351cf4.chunk.css.map": "/Cursor-Nazar_Shtypka/static/css/main.5b351cf4.chunk.css.map",
+    "static/js/2.3dd64d21.chunk.js.LICENSE.txt": "/Cursor-Nazar_Shtypka/static/js/2.3dd64d21.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/Cursor-Nazar_Shtypka/static/media/down-arrow.115e282b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ec0474f.js",
+    "static/js/runtime-main.385d0380.js",
     "static/js/2.3dd64d21.chunk.js",
-    "static/css/main.18d59e66.chunk.css",
+    "static/css/main.5b351cf4.chunk.css",
     "static/js/main.c6d2bb31.chunk.js"
   ]
 }
